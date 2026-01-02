@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-if [ "$EUID" -ne 0]; then
+if [ "$EUID" -ne 0 ]; then
 	echo "Execute como root: sudo ./install.sh"
 	exit 1
 fi
