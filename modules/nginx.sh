@@ -17,7 +17,6 @@ cat <<EOF > "$NGINX_CONF"
 server {
 	listen 80;
 	server_name _;
-}
 
 EOF
 

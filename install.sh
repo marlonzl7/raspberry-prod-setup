@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]; then
 	exit 1
 fi
 
-if [ ! -f .env]; then
+if [ ! -f .env ]; then
 	echo ".env não encontrado. Copie de .env.template"
 	exit 1
 fi
