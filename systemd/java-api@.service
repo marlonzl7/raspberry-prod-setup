@@ -7,11 +7,12 @@ User=%i
 WorkingDirectory=/opt/apps/%i
 ExecStart=/usr/bin/java \
 	-Xms128m -Xmx512m \
-	-jar app.jar
+	-jar app.jar \
+	--server.port=${SERVER_PORT}
 Restart=always
 EnvironmentFile=/opt/apps/%i/.env
 StandardOutput=append:/var/log/apps/%i.log
-StandartError=append:/var/log/apps/%i-error.log
+StandardError=append:/var/log/apps/%i-error.log
 
 [Install]
 WantedBy=multi-user.target

@@ -19,9 +19,10 @@ modules=(
 	base.sh
 	security.sh
 	java.sh
+	system.sh
+	apps-users.sh
 	postgresql.sh
 	nginx.sh
-	system.sh
 )
 
 for module in "${modules[@]}"; do

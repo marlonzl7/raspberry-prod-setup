@@ -25,6 +25,11 @@ FRONTEND_DIR="/var/www/$APP_NAME"
 
 echo "Deploy da aplicação: $APP_NAME"
 
+if ! id "$APP_NAME" &>/dev/null; then
+	echo "Usuário $APP_NAME não existe. Execute install.sh antes."
+	exit 1
+fi
+
 mkdir -p "$APP_DIR"
 mkdir -p "$FRONTEND_DIR"
 
@@ -46,7 +51,7 @@ chmod 750 "$APP_DIR"
 chmod 640 "$APP_DIR/.env"
 
 if [ -n "$FRONTEND_PATH" ]; then
-	if [ ! -d "FRONTEND_PATH" ]; then
+	if [ ! -d "$FRONTEND_PATH" ]; then
 		echo "Diretório de frontend não encontrado"
 		exit 1
 	fi
