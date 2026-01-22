@@ -33,7 +33,7 @@ for app in "${APP_LIST[@]}"; do
 			try_files \$uri \$uri =404;
 		}
 
-		location /api/$app/ {
+		location /api/$app {
 			proxy_pass http://127.0.0.1:${PORT}/;
 			proxy_set_header Host \$host;
 			proxy_set_header X-Real_IP \$remote_addr;
